@@ -1,0 +1,42 @@
+{
+  "name": "covid-recap",
+  "version": "1.0.0",
+  "description": "recap covid-19 at all country",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.prod.js",
+    "start-dev": "webpack-dev-server --config webpack.dev.js"
+  },
+  "keywords": [
+    "covid",
+    "covid",
+    "19",
+    "recap",
+    "covid"
+  ],
+  "author": "hogivano",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.2.1",
+    "html-loader": "^1.1.0",
+    "html-webpack-plugin": "^4.3.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^5.1.1"
+  },
+  "dependencies": {
+    "bootstrap-select": "^1.13.18",
+    "bulma": "^0.9.0",
+    "bulma-toast": "^2.0.1",
+    "dotenv-webpack": "^2.0.0",
+    "mapbox-gl": "^1.11.1",
+    "regenerator-runtime": "^0.13.7",
+    "slim-select": "^1.26.0"
+  }
+}
