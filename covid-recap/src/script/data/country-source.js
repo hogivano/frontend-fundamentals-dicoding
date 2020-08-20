@@ -1,5 +1,0 @@
-class CountrySource {
-    static getCountry() {
-
-    }
-}

@@ -103,7 +103,7 @@ class Mapbox extends HTMLElement {
                     padding-right: 30px;
                 }
             </style>
-            <div class="container mb-4">
+            <div class="mb-4 mt-4">
                 <div id="mapbox" style="width: 100%; height: 500px">
                 </div>
             </div>

@@ -37,25 +37,27 @@ class Filter extends HTMLElement {
         let listOption = '<option selected disabled value="">Select Country</option>'
         if (this._country.length > 0) {
             this._country.forEach(country => {
-                listOption += `<option value="${country.iso3}">${country.name}</option>`
+                (country.iso2 !== undefined) ? listOption += `<option value="${country.iso2}">${country.name}</option>` : ''
             })
         }
 
         this.innerHTML = `
-        <section id="section-filter" class="columns is-vcentered mb-1">
-            <div class="column is-half">
-                <div class="field">
-                    <span class="select">
-                        <select id="select-country" name="country">
-                            ${listOption}
-                        </select>
-                    </span>
+        <section id="section-filter" class="mb-1" style="overflow:hidden;">
+            <div class="columns is-vcentered">
+                <div class="column is-half is-full-mobile">
+                    <div class="field">
+                        <span class="select">
+                            <select id="select-country" name="country">
+                                ${listOption}
+                            </select>
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="is-half" style="float:right">
-                <div class="buttons" style="float:right">
-                    <button id="btn-filter" class="button is-success is-light">Filter</button>
-                    <button id="btn-reset" class="button is-white">Reset</button>
+                <div class="column is-half is-full-mobile" style="float:right">
+                    <div class="buttons" style="float:right">
+                        <button id="btn-filter" class="button is-success is-light">Filter</button>
+                        <button id="btn-reset" class="button is-white">Reset</button>
+                    </div>
                 </div>
             </div>
         </section>

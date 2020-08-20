@@ -1,0 +1,10 @@
+@media only screen and (max-width: 600px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .columns {
+        margin-left: 0;
+    }
+  }

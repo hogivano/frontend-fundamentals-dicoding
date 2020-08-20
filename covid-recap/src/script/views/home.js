@@ -3,6 +3,8 @@ import '../components/filter.js'
 import '../components/mapbox.js'
 import '../components/detail-result.js'
 
+import { toast } from "bulma-toast"
+
 function home() {
     const filterElement = document.querySelector('wrap-filter')
     const resultElement = document.querySelector('wrap-result')
@@ -29,7 +31,13 @@ function home() {
                     }
                 })
         } catch (error) {
-
+            toast({
+                message: "<h2>Sorry, server error. Please try again</h2>",
+                type: "is-danger",
+                position: "bottom-center",
+                dismissible: true,
+                closeOnClick: true
+            })
         }
     }
 

@@ -14,6 +14,18 @@ class DetailResult extends HTMLElement {
     }
 
     render() {
+        let arr = []
+        this._details.forEach(detail => {
+            arr.push( `<tr>
+                    <th>${(detail.provinceState == null) ? "-" : detail.provinceState}</th>
+                    <td>${(detail.admin2 == null) ? "-" : detail.admin2}</td>
+                    <td>${detail.active}</td>
+                    <td>${detail.deaths}</td>
+                    <td>${detail.confirmed}</td>
+                    <td>${detail.recovered}</td>
+                    <td>${detail.incidentRate.toFixed(2)}</td>
+                </tr>`)
+        })
         this.innerHTML = `
         <div id="detail-result" class="py-4 mb-5">
             <div class="mb-5">
@@ -37,26 +49,12 @@ class DetailResult extends HTMLElement {
                         </tr>
                     </thead>  
                     <tbody id="table-body">
+                    ${arr}
                     </tbody>
                 </table>  
             </div>
         </div>    
         `
-
-        const tableBodyElement = this.querySelector('#table-body')
-        this._details.forEach(detail => {
-            tableBodyElement.appendChild(
-                `<tr>
-                    <th>${(detail.provinceState == null) ? "-" : detail.provinceState}</th>
-                    <td>${(detail.admin2 == null) ? "-" : detail.admin2}</td>
-                    <td>${detail.active}</td>
-                    <td>${detail.deaths}</td>
-                    <td>${detail.confirmed}</td>
-                    <td>${detail.recovered}</td>
-                    <td>${detail.incidentRate.toFixed(2)}</td>
-                </tr>`
-            )
-        })
     }
 }
 
